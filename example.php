@@ -17,3 +17,4 @@ function multiply( int $x, int $y ) :int {
 }
 
 echo add( 5, 2 );
+echo multiply( 5, -2 );
