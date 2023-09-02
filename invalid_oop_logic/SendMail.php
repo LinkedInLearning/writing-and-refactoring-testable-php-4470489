@@ -7,18 +7,26 @@ namespace InvalidOOPLogic;
 class SendMail implements MailerInterface
 {
 
+    private string $username = '';
+    private string $secret;
+
     function send(string $to, string $subject, string $body): bool
     {
-        // TODO: Implement send() method.
+        // instantiaite SendMail object and send mail
     }
 
-    function username(): MailerInterface
+    function username( string $username ): MailerInterface
     {
-        // TODO: Implement username() method.
+        // get the username
+        
+        return $this;
     }
 
-    function secret(): MailerInterface
+    function secret( string $secret ): MailerInterface
     {
-        // TODO: Implement secret() method.
+        // get the secret
+        $this->secret = $secret;
+
+        return $this;
     }
 }

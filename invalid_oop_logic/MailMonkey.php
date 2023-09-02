@@ -6,19 +6,28 @@ namespace InvalidOOPLogic;
 
 class MailMonkey implements MailerInterface
 {
+    
+    private string $username;
+    private string $secret;
 
     function send(string $to, string $subject, string $body): bool
     {
-        // TODO: Implement send() method.
+        // instantiaite MailMonkey object and send mail user username and secret
     }
 
-    function username(): MailerInterface
+    function username( string $username ): MailerInterface
     {
-        // TODO: Implement username() method.
+        // get the username
+        $this->username = $username;
+
+        return $this;
     }
 
-    function secret(): MailerInterface
+    function secret( string $secret ): MailerInterface
     {
-        // TODO: Implement secret() method.
+        // get the secret
+        $this->secret = $secret;
+
+        return $this;
     }
 }

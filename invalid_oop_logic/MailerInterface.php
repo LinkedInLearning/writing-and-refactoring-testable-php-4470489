@@ -9,8 +9,8 @@ interface MailerInterface
 
     function send(string $to, string $subject, string $body): bool;
     
-    function username(): self;
+    function username( string $username ): self;
     
-    function secret(): self;
+    function secret( string $secret ): self;
     
 }
