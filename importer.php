@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-function import( $post ) {
+function should_import( $post ): bool {
     // Get the imported post type
     $post_type = get_mirrored_post_type_slug( $post['type'] );
 
@@ -13,7 +13,7 @@ function import( $post ) {
             LOG_SOURCE
         );
 
-        return;
+        return false;
     }
 
     // Get the external ID
@@ -36,9 +36,16 @@ function import( $post ) {
             LOG_SOURCE
         );
 
+        return false;
+    }
+    
+    return true;
+}
+function import( $post ): void {
+    if ( ! should_import( $post ) ) {
         return;
     }
-
+    
     // build the insert array
     $insert_post = [
         'ID'                => $post_id,
