@@ -22,3 +22,15 @@ function find_product( array $products, string $name ) :?Product {
     
     return null;
 }
+
+function is_weekend() {
+
+    $day_of_the_week = date( 'l' );
+    if ( in_array( $day_of_the_week, [ 'Saturday', 'Sunday' ] ) ) {
+        return true;
+    } else if( in_array( $day_of_the_week, [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday' ] ) ) {
+        return false;
+    }
+
+    return false;
+}
