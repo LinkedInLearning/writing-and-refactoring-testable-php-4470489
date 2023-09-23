@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace tight_coupling;
 
-class CSV_Builder
+class CSV_Builder implements Builder
 {
     public function build( array $products ) {
         $csv = '';
