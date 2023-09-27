@@ -10,9 +10,7 @@ function maybe_redirect()
     ];
 
     if (should_redirect($_SERVER['REQUEST_URI'], $redirects)) {
-        $uri = trim($_SERVER['REQUEST_URI'], '/');
-        $uri = explode('/', $uri);
-        $uri = $uri[0];
+        $uri = get_top_level_path($_SERVER['REQUEST_URI'] );
 
         header('Location: ' . $redirects[$uri]);
         exit;
@@ -21,9 +19,12 @@ function maybe_redirect()
 
 function should_redirect(string $path, array $redirects)
 {
-    $path = trim($path, '/');
-    $path = explode('/', $path);
-    $path = $path[0];
+    return array_key_exists(get_top_level_path( $path ), $redirects);
+}
 
-    return array_key_exists($path, $redirects);
+function get_top_level_path( $uri_path ) :string 
+{
+    $uri_path = trim($uri_path, '/');
+    $uri_path = explode('/', $uri_path);
+    return $uri_path[0];
 }
