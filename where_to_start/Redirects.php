@@ -23,6 +23,6 @@ class Redirects
 
     public function get_redirect($uri): string
     {
-        return $this->redirects->get_redirect($uri);
+        return $this->redirects->get_redirect( $uri )->get_to();
     }
 }

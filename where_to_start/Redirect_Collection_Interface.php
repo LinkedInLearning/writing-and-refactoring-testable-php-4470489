@@ -6,5 +6,5 @@ interface Redirect_Collection_Interface
 {
     public function to_array(): array;
     
-    public function get_redirect($uri): string;
+    public function get_redirect($uri): RedirectVO;
 }

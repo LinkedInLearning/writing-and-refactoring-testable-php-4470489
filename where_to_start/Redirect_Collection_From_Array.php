@@ -15,8 +15,8 @@ class Redirect_Collection_From_Array implements Redirect_Collection_Interface
         return $this->redirects;
     }
 
-    public function get_redirect($uri): string
+    public function get_redirect($uri): RedirectVO
     {
-        return $this->redirects[$uri];
+        return new RedirectVO($uri, $this->redirects[$uri] );
     }
 }
