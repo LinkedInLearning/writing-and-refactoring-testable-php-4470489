@@ -3,11 +3,15 @@ declare(strict_types=1);
 
 function maybe_redirect()
 {
-    $redirects_collection = new Redirect_Collection_From_Array([
-        'linkedin' => 'https://www.linkedin.com',
-        'learning' => 'https://www.linkedin.com/learning/',
-    ]);
-
+    $redirects_collection = new Redirect_Collection_Null();
+    
+    if ( ! filter_input(INPUT_GET, 'skip_redirects', FILTER_VALIDATE_BOOLEAN ) ) {
+        $redirects_collection = new Redirect_Collection_From_Array([
+            'linkedin' => 'https://www.linkedin.com',
+            'learning' => 'https://www.linkedin.com/learning/',
+        ]);
+    }
+    
     // Maybe redirect.
     $redirects = new Redirects( $redirects_collection );
 
