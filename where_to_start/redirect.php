@@ -8,18 +8,14 @@ function maybe_redirect()
         'linkedin' => 'https://www.linkedin.com',
         'learning' => 'https://www.linkedin.com/learning/',
     ] );
+    
+    $top_level_path = get_top_level_path( $_SERVER['REQUEST_URI'] );
 
-    if (should_redirect($_SERVER['REQUEST_URI'], $redirects->to_array())) {
-        $uri = get_top_level_path($_SERVER['REQUEST_URI'] );
+    if ($redirects->should_redirect( $top_level_path ) ) {
 
-        header('Location: ' . $redirects[$uri]);
+        header('Location: ' . $redirects->get_redirect( $top_level_path ));
         exit;
     }
-}
-
-function should_redirect(string $path, array $redirects)
-{
-    return array_key_exists(get_top_level_path( $path ), $redirects);
 }
 
 function get_top_level_path( $uri_path ) :string 

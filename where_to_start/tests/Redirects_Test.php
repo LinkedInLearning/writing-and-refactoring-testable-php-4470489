@@ -25,4 +25,25 @@ class Redirects_Test extends \PHPUnit\Framework\TestCase
         
         $this->assertEquals($expected, $redirects->to_array());
     }
+
+    function test_should_redirect()
+    {
+        $redirects = new \Redirects( [
+            'linkedin' => 'https://www.linkedin.com',
+            'learning' => 'https://www.linkedin.com/learning/',
+        ] );
+        
+        $this->assertTrue($redirects->should_redirect('linkedin'));
+        $this->assertFalse($redirects->should_redirect('another-path'));
+    }
+    
+    function test_get_redirect()
+    {
+        $redirects = new \Redirects( [
+            'linkedin' => 'https://www.linkedin.com',
+            'learning' => 'https://www.linkedin.com/learning/',
+        ] );
+        
+        $this->assertEquals('https://www.linkedin.com', $redirects->get_redirect('linkedin'));
+    }
 }
