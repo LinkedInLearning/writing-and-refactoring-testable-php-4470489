@@ -4,12 +4,12 @@ declare(strict_types=1);
 function maybe_redirect()
 {
     // Maybe redirect.
-    $redirects = [
+    $redirects = new Redirects([
         'linkedin' => 'https://www.linkedin.com',
         'learning' => 'https://www.linkedin.com/learning/',
-    ];
+    ] );
 
-    if (should_redirect($_SERVER['REQUEST_URI'], $redirects)) {
+    if (should_redirect($_SERVER['REQUEST_URI'], $redirects->to_array())) {
         $uri = get_top_level_path($_SERVER['REQUEST_URI'] );
 
         header('Location: ' . $redirects[$uri]);
