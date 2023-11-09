@@ -1,9 +1,11 @@
 <?php
 declare(strict_types=1);
 
+namespace Project\Redirect\Collections;
+
 use \Project\Redirect\RedirectVO;
 
-class Redirect_Collection_From_Array implements Redirect_Collection_Interface
+class From_Array implements Collection_Interface
 {
 
     public function __construct(

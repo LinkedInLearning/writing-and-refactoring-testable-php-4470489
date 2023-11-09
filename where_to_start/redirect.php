@@ -1,6 +1,10 @@
 <?php
 declare(strict_types=1);
 
+use Project\Redirect\Collections\Collection_Interface;
+use Project\Redirect\Collections\From_Array;
+use Project\Redirect\Collections\Nullable;
+
 function maybe_redirect()
 {
     // Maybe redirect.
@@ -15,15 +19,15 @@ function maybe_redirect()
     }
 }
 
-function get_collection() : Redirect_Collection_Interface {
+function get_collection() : Collection_Interface {
     if ( ! filter_input(INPUT_GET, 'skip_redirects', FILTER_VALIDATE_BOOLEAN ) ) {
-        return new Redirect_Collection_From_Array([
+        return new From_Array([
             'linkedin' => 'https://www.linkedin.com',
             'learning' => 'https://www.linkedin.com/learning/',
         ]);
     }
 
-    return new Redirect_Collection_Null();
+    return new Nullable();
 }
 
 function get_top_level_path($uri_path): string

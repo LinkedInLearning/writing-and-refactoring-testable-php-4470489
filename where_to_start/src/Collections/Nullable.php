@@ -1,9 +1,11 @@
 <?php
 declare(strict_types=1);
 
+namespace Project\Redirect\Collections;
+
 use Project\Redirect\RedirectVO;
 
-class Redirect_Collection_Null implements Redirect_Collection_Interface
+class Nullable implements Collection_Interface
 {
 
     public function to_array(): array

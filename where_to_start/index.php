@@ -2,11 +2,8 @@
 declare(strict_types=1);
 
 require 'redirect.php';
-require 'Redirect_Collection_Interface.php';
-require 'Redirect_Collection_Null.php';
-require 'Redirect_Collection_From_Array.php';
 require 'Redirects.php';
-require 'RedirectVO.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 maybe_redirect();
 

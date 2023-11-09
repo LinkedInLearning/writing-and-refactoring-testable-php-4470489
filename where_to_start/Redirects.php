@@ -1,12 +1,13 @@
 <?php
 declare(strict_types=1);
 
+use Project\Redirect\Collections\Collection_Interface;
 
 class Redirects
 {
 
     public function __construct(
-        private Redirect_Collection_Interface $redirects,
+        private Collection_Interface $redirects,
     )
     {
     }
