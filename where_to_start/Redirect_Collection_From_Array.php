@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use \Project\Redirect\RedirectVO;
 
 class Redirect_Collection_From_Array implements Redirect_Collection_Interface
 {

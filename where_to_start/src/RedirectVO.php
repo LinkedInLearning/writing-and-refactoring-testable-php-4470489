@@ -2,6 +2,8 @@
 declare(strict_types=1);
 
 
+namespace Project\Redirect;
+
 final class RedirectVO
 {
     private string $from;
@@ -14,11 +16,11 @@ final class RedirectVO
     {
         // If it's a valid URI, throw an exception
         if (filter_var($from, FILTER_VALIDATE_URL)) {
-            throw new InvalidArgumentException("Invalid from URI, path expected: $from");
+            throw new \InvalidArgumentException("Invalid from URI, path expected: $from");
         }
         
         if ( empty($from) || empty($to) ) {
-            throw new InvalidArgumentException("Empty from or to URI");
+            throw new \InvalidArgumentException("Empty from or to URI");
         }
         
         $this->from = $from;

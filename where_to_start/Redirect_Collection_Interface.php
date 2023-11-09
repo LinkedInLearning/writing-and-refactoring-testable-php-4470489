@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use Project\Redirect\RedirectVO;
 
 interface Redirect_Collection_Interface
 {

@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use Project\Redirect\RedirectVO;
 
 class Redirect_Collection_Null implements Redirect_Collection_Interface
 {
