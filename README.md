@@ -1,7 +1,7 @@
-# COURSENAME
-This is the repository for the LinkedIn Learning course `course-name`. The full course is available from [LinkedIn Learning][lil-course-url].
+# Writing and Refactoring Testable PHP
+This is the repository for the LinkedIn Learning course `Writing and Refactoring Testable PHP`. The full course is available from [LinkedIn Learning][lil-course-url].
 
-![course-name-alt-text][lil-thumbnail-url] 
+![Writing and Refactoring Testable PHP][lil-thumbnail-url] 
 
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
@@ -22,15 +22,9 @@ To resolve this issue:
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
-## Installing
-1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
-2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
-
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
+[lil-course-url]: https://www.linkedin.com/learning/writing-and-refactoring-testable-php
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQGISPchWOlZSw/learning-public-crop_675_1200/0/1705964629802?e=2147483647&v=beta&t=YbcR_6U440arGivtmyWV4yQghzrVaXsXIMNlrDI_qKY
 
